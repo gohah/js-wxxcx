@@ -1,0 +1,20 @@
+<view class="container feedback">
+    <view class="fdbk_header">
+        <radio-group class="radio-group flex" bindchange="radioChanged">
+          <label class="radio" wx:for="{{labelList}}" wx:key="">
+            <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
+          </label>
+        </radio-group>        
+    </view>
+    <form bindsubmit="submitFun">
+        <view class="fdbk_body">
+            <textarea class="fdbk_area" name="content" placeholder="有了您的反馈，我们才能进步" value="{{content}}" />
+        </view>
+        <view class="fdbk_footer">
+            <button type="primary" class="md_form_btn" form-type="submit">提 交</button>
+        </view>
+      </form>
+
+</view>
+
+<include src="/components/components.wxml"/>

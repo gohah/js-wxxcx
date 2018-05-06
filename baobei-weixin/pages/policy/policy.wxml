@@ -1,0 +1,76 @@
+<view class="container">
+	<view class="idx_top layout">
+		<text class="idx_top_hello">Hi, {{userInfo.bb_nickName}}</text>
+		<text class="idx_top_desc">欢迎来到保呗－港险保单智能管理专家</text>
+		<navigator url="/pages/message/message" class="idx_top_bell">
+			<image class="idx_top_bell_img" src="/images/common/icons/bell2.png"></image>
+			<text class="idx_top_bell_num" wx:if="{{userInfo.msgCount>0?true:false}}"></text>
+		</navigator>
+	</view>
+	<view class="idx_content">
+		<view class="idx_abstract">
+			<view class="idx_add">
+				<image class="idx_add_arc" src="/images/page/index/arc.png"></image>
+				<view class="idx_add_btn" bindtap="showAddMenu">
+					<image class="idx_add_icon" src="/images/page/index/add.png"></image>
+				</view>
+				<text class="idx_add_txt">添加保单</text>
+			</view>
+			<view class="idx_abstract_info flex">
+				<navigator url="/pages/policy-list/policy-list" class="idx_info_item flex">
+					<image src="/images/page/index/policy_ico.png" class="idx_info_ico"></image>
+					<view class="idx_info_i_content">
+						<text class="idx_info_i_txt">保单总数 <text class="idx_info_i_num">{{userInfo.policyCount||0}}</text> 条</text>
+						<!-- <text class="idx_info_i_txt">过期保单 <text class="idx_info_i_num">{{userInfo.policyOverdueCount||0}}</text> 条</text> -->
+					</view>
+				</navigator>
+				<navigator url="/pages/photo-list/photo-list" class="idx_info_item flex">
+					<image src="/images/page/index/photo_ico.png" class="idx_info_ico"></image>
+					<view class="idx_info_i_content">
+						<text class="idx_info_i_txt">保单照片 <text class="idx_info_i_num">{{userInfo.policyPhotoCount||0}}</text> 条</text>
+						<!-- <text class="idx_info_i_txt">解析中 <text class="idx_info_i_num">{{userInfo.policyParsingCount||0}}</text> 条</text> -->
+					</view>
+				</navigator>
+			</view>
+		</view>
+		<view class="weui-cells__title">
+		近期保单
+			<navigator url="/pages/policy-list/policy-list" class="weui-cells__title-link">更多</navigator>
+		</view>
+		<view class="idx_list">
+			<navigator url="/pages/policy-detail/policy-detail?id={{item.id}}" class="weui-form-preview" wx:for="{{policys.items}}" wx:key="">
+	            <view class="weui-form-preview__hd">
+	                <view class="weui-form-preview__label flex">
+	                	<image class="pols_i_logo" src="{{item.companyMapping.bb_logo}}"></image>
+		                <text class="pols_i_title">{{item.productMapping.name}}</text>
+	                </view>
+	                <view class="weui-form-preview__value_in-hd"><text>\r\n</text></view>
+	            </view>
+	            <view class="weui-form-preview__bd">
+	                <view class="weui-form-preview__item">
+	                    <view class="weui-form-preview__label">保单号</view>
+	                    <view class="weui-form-preview__value">{{item.code}}</view>
+	                </view>
+	                <view class="weui-form-preview__item">
+	                    <view class="weui-form-preview__label">投保人</view>
+	                    <view class="weui-form-preview__value">{{item.customer_name}}</view>
+	                </view>
+	                <view class="weui-form-preview__item">
+	                    <view class="weui-form-preview__label">受保人</view>
+	                    <view class="weui-form-preview__value">{{item.policy_name_cn}}</view>
+	                </view>
+	            </view>
+	        </navigator>
+		</view>
+	</view>
+	<view class="idx_content_none" wx:if="{{!policys.items.length}}">
+		<view class="idx_none_item">
+			<text class="idx_none_txt">您还没有添加保单，点击按钮马上添加</text>
+			<navigator class="idx_none_btn" bindtap="showAddMenu">
+			<image class="idx_none_btn_ico" src="/images/common/icons/add-none.png"></image>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+

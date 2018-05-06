@@ -1,0 +1,16 @@
+<view class="container upload_photo">
+    <view class="upph_header flex layout">
+        <icon type="warn" size="18" />
+        <text class="upph_title">一张照片对应一份保单</text>
+    </view>
+    <view class="upph_body layout">
+        <text class="upph_top_desc">包含保险产品、保险公司、保单号、投保人、受保人、缴费信息等</text>
+        <view class="upph_sample">
+            <image src="/images/page/upload-photo/policy_sample.jpg" class="upph_sample_img"></image>
+        </view>
+        <view class="upph_upload_btn">
+            <image src="/images/page/upload-photo/photo_btn.png" class="upph_upload_ico" bindtap="chooseImage"></image>
+        </view>
+    </view>
+
+</view>

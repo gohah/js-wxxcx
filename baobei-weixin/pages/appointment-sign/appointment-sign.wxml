@@ -1,0 +1,66 @@
+<view class="container appointment_sign">
+    <view class="weui-cells__title">计划书基本信息</view>
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/add-company/add-company" class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">保险公司</view>
+            </view>
+            <view class="weui-cell__bd">
+                <view class="weui-select weui-select_in-select-after">{{companyList[selector.company].name}}</view>
+            </view>
+        </navigator>
+         <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">保险产品</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker range="{{productList}}" range-key="name" value="{{selector.product}}" name="product" data-key="product" bindchange="productsChange">
+                    <view class="weui-select weui-select_in-select-after">{{productList[selector.product].name}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">缴费年期(年)</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker range="{{productList[selector.product].paymentperiodsMapping}}" range-key="name" value="{{selector.subproduct_id}}" name="subproduct_id" data-key="subproduct_id" bindchange="bindSelectChange">
+                    <view class="weui-select weui-select_in-select-after">{{productList[selector.product].paymentperiodsMapping[selector.subproduct_id].name}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">预约签单时间</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{detail.date}}" start="{{today}}" end="2028-12-31" data-key="date" bindchange="bindInputChange" value="{{detail.date}}">
+                    <view class="weui-select">{{detail.date}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">时间</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="time" value="{{detail.time}}" start="06:00" end="22:00" data-key="time" bindchange="bindInputChange" value="{{detail.time}}">
+                    <view class="weui-select">{{detail.time}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+
+    <view class="md_form_ft layout">
+        <button type="primary" class="md_form_btn" bindtap="submitFun">确定</button>
+        <view class="md_form_ft_link">
+            <navigator url="/pages/appointment-list/appointment-list">我的签单</navigator>
+        </view>
+    </view>
+</view>
+
+<include src="/components/components.wxml"/>

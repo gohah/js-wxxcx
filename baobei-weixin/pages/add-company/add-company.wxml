@@ -1,0 +1,12 @@
+<view class="container add_company">
+	<view class="addcom_list">
+		<view class="weui-grids">
+	        <block wx:for-items="{{companyList}}" wx:key="{{index}}">
+	            <view class="weui-grid" hover-class="weui-grid_active" data-index="{{index}}" bindtap="chooseCompany">
+	                <image class="weui-grid__icon" src="{{item.bb_logo||'/images/common/default-company-logo.png'}}" />
+	                <view class="weui-grid__label">{{item.name}}</view>
+	            </view>
+	        </block>
+	    </view>
+	</view>
+</view>

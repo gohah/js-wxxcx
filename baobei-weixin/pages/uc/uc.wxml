@@ -1,0 +1,76 @@
+<view class="container uc">
+
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">头像</view>
+            <view class="weui-cell__ft">
+            	<image src="{{userInfo.bb_avatarUrl}}" class="uc_link_avatar" data-url="{{userInfo.bb_avatarUrl}}" bindtap="previewImage"></image>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">昵称</view>
+            <view class="weui-cell__ft">{{userInfo.bb_nickName}}</view>
+        </view>
+        <navigator url="/pages/bind-phone/bind-phone" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">手机</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">{{userInfo.phone||'未绑定'}}</view>
+        </navigator>
+        <navigator url="/pages/agent/agent" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:if="{{userInfo.bb_status==0}}">
+            <view class="weui-cell__bd">代理人</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+                <text>未申请</text>
+            </view>
+        </navigator>
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:if="{{userInfo.bb_status==1}}">
+            <view class="weui-cell__bd">代理人</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+                <text class="cyan">申请中</text>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:if="{{userInfo.bb_status==2}}">
+            <view class="weui-cell__bd">代理人</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access">
+                <text class="green">已通过</text>
+            </view>
+        </view>
+    </view>
+
+	<view class="space_30"></view>
+
+	<view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/uc-policys/uc-policys" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">保单管理</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/plan-list/plan-list" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">计划书</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/appointment-sign/appointment-sign" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">预约签单</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+
+    <view class="space_30"></view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/claim-guide/claim-guide" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">理赔攻略</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+
+    <view class="space_30"></view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="/pages/feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">意见反馈</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="/pages/about/about" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">关于保呗</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+</view>

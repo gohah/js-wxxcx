@@ -1,0 +1,90 @@
+.policy_list {
+    color:#333;
+}
+
+/*.pols_add_wrap {
+    margin-top:30rpx;
+    padding:0 10rpx;
+}
+
+.idx_add {
+    background: #fff;
+    padding: 20rpx 0;
+    text-align: center;
+    border-radius: 10rpx;
+}
+
+.idx_add_txt {
+    display: block;
+    font-size: 34rpx;
+    line-height: 48rpx;
+}
+
+.idx_add_btn {
+    width: 100rpx;
+    height: 100rpx;
+    margin:0 auto;
+}
+
+.idx_add_icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+}*/
+
+.policy_list {
+
+}
+.pols_policy_list {
+}
+.pols_i_logo {
+    width:60rpx;
+    height:60rpx;
+    margin-right:10rpx;
+}
+.weui-form-preview__label {
+    align-items:center;
+}
+.pols_i_title {
+    font-size: 34rpx;
+    color:#333;
+}
+
+.pols_edit_ico {
+    margin-top:14rpx;
+    width:50rpx;
+    height:50rpx;
+}
+.weui-form-preview {
+    margin-top:30rpx;
+}
+
+
+/*内容为空*/
+.pols_content_none {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding-top: 50%;
+}
+
+.pols_none_item {}
+
+.pols_none_txt {
+    line-height: 48rpx;
+}
+
+.pols_none_btn {
+    width: 116rpx;
+    height: 116rpx;
+    margin: 20rpx auto 0 auto;
+}
+
+.pols_none_btn_ico {
+    width: 100%;
+    height: 100%;
+}

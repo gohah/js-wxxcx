@@ -1,0 +1,18 @@
+<view class="container">
+	<view class="mess_list" wx:if="{{messages.items.length}}">
+		<navigator class="mess_list_item layout" url="/pages/message-detail/message-detail?index={{index}}" wx:for="{{messages.items}}" wx:for-item="item" wx:key="">
+			<image class="mess_i_icon" src="/images/common/icons/bell.png" wx:if="{{item.status==1}}"></image>
+			<image class="mess_i_icon" src="/images/common/icons/bell-active.png" wx:if="{{item.status==0}}"></image>
+			<view class="mess_i_content">
+				<view class="mess_i_content_top">
+					<text class="mess_i_title">{{mapping.message_type[item.type]}}</text>
+					<text class="mess_i_date">{{item.create_time}}</text>
+				</view>
+				<view class="mess_i_desc">{{item.content}}</view>
+			</view>
+		</navigator>
+	</view>
+	<view class="mess_empty" wx:if="{{!messages.items.length}}">
+		<text class="mess_empty_txt">当前没有消息</text>
+	</view>
+</view>

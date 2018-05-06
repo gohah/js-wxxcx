@@ -1,0 +1,42 @@
+<view class="container agent_apply">
+    <view class="space_30"></view>
+    <form bindsubmit="submitFun">
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="name" placeholder="真实姓名" value="{{detail.name}}" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="phone" placeholder="手机号码" value="{{detail.phone}}" disabled="{{detail.phone.length}}" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">邮箱</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="email" placeholder="邮箱（接收代理人资料）" value="{{detail.email}}" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">微信号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="wechat" placeholder="微信号（选填）" value="{{detail.wechat}}" />
+                </view>
+            </view>
+        </view>
+        <view class="md_form_ft layout">
+            <button type="primary" form-type="submit">提交</button>
+        </view>
+    </form>
+</view>

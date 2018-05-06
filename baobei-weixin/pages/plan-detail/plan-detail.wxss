@@ -1,0 +1,6 @@
+.plan_detail {
+
+}
+.weui-form-preview__item {
+	line-height: 18px;
+}

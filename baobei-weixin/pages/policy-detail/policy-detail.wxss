@@ -1,0 +1,37 @@
+.policy_detail {
+
+}
+.pldet_header {
+	border-top:1rpx solid #fff;
+	background: #D04B4B;
+	height:300rpx;
+	align-items:center;
+}
+.pldet_hd_content {
+	width:100%;
+	text-align:center;
+}
+.pldet_logo_img {
+	width:100rpx;
+	height:100rpx;
+	background:#fff;
+	border-radius:50%;
+	border:1rpx solid #ccc;
+}
+.pldet_pro_title {
+	display: block;
+	font-size: 36rpx;
+	color: #FFFFFF;
+	margin-top:10rpx;
+	line-height:50rpx;
+}
+.pldet_body {
+	
+}
+.pldet_body .weui-form-preview__hd .weui-form-preview__label {
+	font-size: 36rpx;
+	color: #333333;
+}
+.pldet_body .weui-form-preview__hd {
+	padding-bottom:0;
+}

@@ -1,0 +1,29 @@
+<view class="container plan_order">
+    <view class="plod_form">
+        <view class="space_30"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">邮箱</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="接收计划书邮箱" value="{{detail.email}}" bindinput="emailInput" />
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__tips">
+            <text class="tips_txt">最近输入:</text>
+            <text class="tips_link" bindtap="recentlyEmailTap" wx:for="{{recentemail}}" wx:key="" data-val="{{item}}">{{item}}</text>
+        </view>
+
+        <view class="plod_form_ft">
+            <button class="weui-btn" type="primary" bindtap="submitFun">提交</button>
+            <button class="weui-btn" type="default" bindtap="prevStep">上一步</button>
+        </view>
+
+    </view>
+
+</view>
+
+<include src="/components/components.wxml"/>

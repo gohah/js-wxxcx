@@ -1,0 +1,82 @@
+.mess_list {
+    overflow: hidden;
+    background: #fff;
+}
+
+.mess_list_item {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    padding: 30rpx 0;
+}
+
+.mess_list_item::after {
+    content: '';
+    position: absolute;
+    left: 30rpx;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1rpx solid #E5E5E5;
+}
+
+.mess_list_item:last-child::after {
+    border-bottom: none;
+}
+
+.mess_i_icon {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.mess_i_content {
+    flex-grow: 1;
+}
+
+.mess_i_content_top {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    line-height: 48rpx;
+}
+
+.mess_i_title {
+    font-size: 34rpx;
+    color: #333;
+}
+
+.mess_i_date {
+    font-size: 26rpx;
+    color: #B2B2B2;
+}
+
+.mess_i_desc {
+    font-size: 26rpx;
+    color: #999999;
+    line-height: 37rpx;
+    height: 74rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.mess_empty {
+    padding-top: 300rpx;
+    text-align: center;
+}
+
+.mess_empty_txt {
+    color: #999;
+    font-size: 36rpx;
+}

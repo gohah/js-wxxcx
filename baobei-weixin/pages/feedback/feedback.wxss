@@ -1,0 +1,24 @@
+.feedback {
+	padding:30rpx;
+}
+.fdbk_header {
+	padding-bottom:20rpx;
+}
+.fdbk_header .radio-group {
+	justify-content:space-between;
+}
+.fdbk_body {
+	
+}
+.fdbk_area {
+	width:100%;
+	padding:20rpx;
+	background: #FFFFFF;
+	border: 1px solid #979797;
+	border-radius: 10px;
+	box-sizing: border-box;
+	min-height:450rpx;
+}
+.fdbk_footer {
+	padding-top:50rpx;
+}

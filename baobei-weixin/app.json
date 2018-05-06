@@ -1,0 +1,77 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/plan-list/plan-list",
+    "pages/plan-detail/plan-detail",
+    
+    "pages/plan-order/step0/step0",
+    "pages/plan-order/step1/step1",
+    "pages/plan-order/step2/step2",
+    "pages/plan-order/step3/step3",
+    
+    "pages/appointment-list/appointment-list",
+    "pages/appointment-sign/appointment-sign",
+    
+    "pages/agent-apply/agent-apply",
+    "pages/agent/agent",
+
+
+    "pages/policy/policy",
+    "pages/policy-edit/policy-edit",
+    "pages/policy-add/policy-add",
+    "pages/uc/uc",
+    
+    "pages/uc-policys/uc-policys",
+    "pages/bind-phone/bind-phone",
+
+
+
+    "pages/policy-list/policy-list",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/message/message",
+    "pages/policy-detail/policy-detail",
+    "pages/photo-list/photo-list",
+    "pages/add-company/add-company",
+    "pages/upload-photo/upload-photo",
+
+    "pages/message-detail/message-detail",
+    "pages/claim-guide/claim-guide",
+    "pages/about/about"
+  ],
+  "window":{
+    "navigationBarBackgroundColor":"#D04B4B",
+    "navigationBarTitleText":"保呗Lite",
+    "backgroundColor":"#EFEFF4",
+    "backgroundTextStyle":"light",
+    "enablePullDownRefresh":false
+  },
+  "tabBar":{
+    "color":"#B2B2B2",
+    "selectedColor":"#D04B4B",
+    "backgroundColor":"#F8F8FB",
+    "borderStyle":"white",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"计划书",
+        "iconPath":"images/common/tabbar/tabbar-plan.png",
+        "selectedIconPath":"images/common/tabbar/tabbar-plan-active.png"
+      },
+      {
+        "pagePath":"pages/policy/policy",
+        "text":"保单管理",
+        "iconPath":"images/common/tabbar/tabbar-policy.png",
+        "selectedIconPath":"images/common/tabbar/tabbar-policy-active.png"
+      },
+      {
+        "pagePath":"pages/uc/uc",
+        "text":"我的",
+        "iconPath":"images/common/tabbar/tabbar-uc.png",
+        "selectedIconPath":"images/common/tabbar/tabbar-uc-active.png"
+      }
+    ],
+    "position":"bottom"
+  },
+  "debug":false
+}

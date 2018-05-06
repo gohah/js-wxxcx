@@ -1,0 +1,9 @@
+<template name="topbar">
+	<view class="weui-flex topbar" >
+		<block wx:for="{{navList}}" wx:key="">
+			<view class="weui-flex__item topbar_item {{index==activeIndex? 'active':''}}" data-index="{{index}}" catchtap="topbarTap">
+				<text class="topbar_i_txt">{{item.name}}</text>
+			</view>
+		</block>
+	</view>
+</template>

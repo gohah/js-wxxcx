@@ -1,0 +1,57 @@
+<view class="container policy_detail">
+    <view class="pldet_header flex">
+        <view class="pldet_hd_content">
+            <image class="pldet_logo_img" src="{{detail.companyMapping.bb_logo}}"></image>
+            <text class="pldet_pro_title">{{detail.productMapping.name}}</text>
+        </view>
+    </view>
+    <view class="pldet_body">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">基本信息</view>
+                <text class="weui-form-preview__value_in-hd">\r\n</text>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">保单号</view>
+                    <view class="weui-form-preview__value">{{detail.code}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">投保人</view>
+                    <view class="weui-form-preview__value">{{detail.customer_name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">受保人</view>
+                    <view class="weui-form-preview__value">{{detail.policy_name_cn}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">缴费信息</view>
+                <text class="weui-form-preview__value_in-hd">\r\n</text>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">年缴保费</view>
+                    <view class="weui-form-preview__value">${{detail.premium_usd||0}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">缴费年期</view>
+                    <view class="weui-form-preview__value">{{detail.paymentperiodMapping.name||0}} 年</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">缴费方式</view>
+                    <view class="weui-form-preview__value">{{detail.payment_method}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">首年缴费日期</view>
+                    <view class="weui-form-preview__value">{{detail.bb_first_year_payment_date}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="md_form_ft layout">
+            <button type="primary" class="md_form_btn" bindtap="editPolicy">修 改</button>
+        </view>
+    </view>
+</view>
+
+<include src="/components/components.wxml"/>

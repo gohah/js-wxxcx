@@ -1,0 +1,5 @@
+.mes_detail {
+	padding: 30rpx 0;
+}
+.mes_detail_txt {
+}

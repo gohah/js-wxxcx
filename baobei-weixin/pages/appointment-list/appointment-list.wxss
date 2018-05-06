@@ -1,0 +1,13 @@
+.apls_i_title {
+	font-size: 34rpx;
+    color:#333;
+}
+.weui-form-preview {
+    margin-bottom:30rpx;
+}
+.nodata {
+	margin-top:200rpx;
+}
+.apls_i_status {
+	color:#09BB07;
+}

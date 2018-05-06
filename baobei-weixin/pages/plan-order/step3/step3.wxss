@@ -1,0 +1,6 @@
+.plod_form_ft {
+	padding:30rpx;
+}
+.plod_plan_extra {
+	margin-top:-1px;
+}

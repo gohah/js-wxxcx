@@ -1,0 +1,64 @@
+<view class="container policy_list">
+	<view class="weui-navbar_space"></view>
+	<view class="weui-navbar order_navbar">
+        <block wx:for-items="{{orders}}" wx:key="{{index}}">
+            <view class="flex weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" data-index="{{index}}" bindtap="tabClick">
+                <text class="weui-navbar__title">{{item.name}}</text>
+                <image src="/images/common/icons/order_{{orders[index].order}}.png" class="order_navbar_ico"></image>
+            </view>
+        </block>
+    </view>
+	<view class="pols_content" wx:if="{{policys.items.length}}">
+<!-- 		<view class="pols_add_wrap">
+			<view class="idx_add">
+				<view class="idx_add_btn" bindtap="showAddMenu">
+					<image class="idx_add_icon" src="/images/common/icons/add.png"></image>
+				</view>
+				<text class="idx_add_txt">添加保单</text>
+			</view>
+		</view> -->
+		<view class="pols_policy_list">
+			<navigator url="/pages/policy-detail/policy-detail?id={{item.id}}" class="weui-form-preview" wx:for="{{policys.items}}" wx:key="">
+	            <view class="weui-form-preview__hd">
+	                <view class="weui-form-preview__label flex">
+	                	<image class="pols_i_logo" src="{{item.companyMapping.bb_logo}}"></image>
+		                <text class="pols_i_title">{{item.productMapping.name}}</text>
+	                </view>
+	                <view class="weui-form-preview__value_in-hd">
+	                	<image class="pols_edit_ico" src="/images/page/policy-list/delete.png" catchtap="deletePolicy" data-index="{{index}}"></image>
+	                </view>
+	            </view>
+	            <view class="weui-form-preview__bd">
+	                <view class="weui-form-preview__item">
+	                    <view class="weui-form-preview__label">保单号</view>
+	                    <view class="weui-form-preview__value">{{item.code}}</view>
+	                </view>
+	                <view class="weui-form-preview__item">
+	                    <view class="weui-form-preview__label">投保人</view>
+	                    <view class="weui-form-preview__value">{{item.customer_name}}</view>
+	                </view>
+	                <view class="weui-form-preview__item">
+	                    <view class="weui-form-preview__label">受保人</view>
+	                    <view class="weui-form-preview__value">{{item.policy_name_cn}}</view>
+	                </view>
+	            </view>
+	        </navigator>
+		</view>
+		<view class="md_loadover flex" wx:if="{{policys.items.length&&!policys.pagination.hasNext}}">
+            <view class="md_loadover_line"></view>
+            <view class="md_loadover_txt">加载完了</view>
+            <view class="md_loadover_line"></view>
+        </view>
+	</view>
+	<!-- 没有保单 -->
+	<view class="pols_content_none" wx:if="{{!policys.items.length}}">
+		<view class="pols_none_item">
+			<view class="pols_none_txt">您还没有添加保单，点击按钮马上添加</view>
+			<view class="pols_none_btn" bindtap="showAddMenu">
+				<image class="pols_none_btn_ico" src="/images/common/icons/add-none.png"></image>
+			</view>
+		</view>
+	</view>
+</view>
+
+<include src="/components/components.wxml"/>

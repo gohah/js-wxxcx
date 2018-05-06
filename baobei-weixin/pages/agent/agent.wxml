@@ -1,0 +1,51 @@
+<view class="container agent">
+    <view class="agnt_adv layout">
+        <image class="agnt_adv_img" src="/images/page/agent/default_avatar.png"></image>
+        <text class="agnt_adv_txt">成为保呗代理人，即可享受以下特权：</text>
+        <view class="agnt_adv_list">
+            <view class="agnt_item flex">
+                <icon type="success_no_circle" size="12" color="#FEC552"/>
+                <view class="agnt_i_txt">计划书 — 签单 — 结算全流程线上自主操作</view>
+            </view>
+            <view class="agnt_item flex">
+                <icon type="success_no_circle" size="12" color="#FEC552"/>
+                <view class="agnt_i_txt">深港两地豪华接待中心</view>
+            </view>
+            <view class="agnt_item flex">
+                <icon type="success_no_circle" size="12" color="#FEC552"/>
+                <view class="agnt_i_txt">频繁的线上线下港险知识培训</view>
+            </view>
+            <view class="agnt_item flex">
+                <icon type="success_no_circle" size="12" color="#FEC552"/>
+                <view class="agnt_i_txt">最重要的是<text class="strong">『全港最高佣金』</text></view>
+            </view>
+        </view>
+        <view class="agnt_adv_ft layout">
+            <navigator url="/pages/agent-apply/agent-apply" class="agnt_adv_btn" redirect>马上申请</navigator>
+        </view>
+    </view>
+    <view class="agnt_service">
+        <view class="title_bar_triangle arrow">服务流程</view>
+        <view class="agnt_serv_bd">
+            <view class="agnt_serv_list layout">
+                <view class="agnt_serv_item">
+                    <image class="agnt_serv_i_ico" src="/images/page/agent/service1.png"></image>
+                    <view class="agnt_serv_i_title">填写信息</view>
+                    <view class="agnt_serv_i_desc">填写基本信息</view>
+                </view>
+                <image src="/images/page/agent/arrow_down.png" class="agnt_serv_sep"></image>
+                <view class="agnt_serv_item">
+                    <image class="agnt_serv_i_ico" src="/images/page/agent/service2.png"></image>
+                    <view class="agnt_serv_i_title">客服审核</view>
+                    <view class="agnt_serv_i_desc">保呗客服电话回访确认您的信息</view>
+                </view>
+                <image src="/images/page/agent/arrow_down.png" class="agnt_serv_sep"></image>
+                <view class="agnt_serv_item">
+                    <image class="agnt_serv_i_ico" src="/images/page/agent/service3.png"></image>
+                    <view class="agnt_serv_i_title">下发ERP帐号</view>
+                    <view class="agnt_serv_i_desc">发送ERP网址和代理人账号到您的邮箱</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

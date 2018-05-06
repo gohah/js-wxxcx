@@ -1,0 +1,11 @@
+
+@import 'styles/reset.wxss';
+@import 'styles/layout.wxss';
+@import 'styles/form.wxss';
+
+/*plugins*/
+@import "./components/wetoast/wetoast.wxss";
+@import "plugins/wxParse/wxParse.wxss";
+@import 'styles/weui.wxss';
+
+@import 'styles/components.wxss';

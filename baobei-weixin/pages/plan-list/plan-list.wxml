@@ -1,0 +1,62 @@
+<view class="container plls">
+    <view class="space_30"></view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">审核状态</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker range="{{planStateList}}" range-key="val" value="{{planStateIndex}}" bindchange="stateChange">
+                    <view class="weui-select weui-select_in-select-after">{{planStateList[planStateIndex].val}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+
+    <view class="plan_list">
+        <navigator url="/pages/plan-detail/plan-detail?id={{item.id}}" class="weui-form-preview" wx:for="{{plans.items}}" wx:key="">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">
+                    <text class="plan_i_title">{{item.productMapping.name}}</text>
+                </view>
+                <view class="weui-form-preview__value">
+                    <text class="plan_i_status ing" wx:if="{{item.state==0}}">生成中</text>
+                    <text class="plan_i_status pass" wx:if="{{item.state==1}}">已生成</text>
+                    <text class="plan_i_status fail" wx:if="{{item.state==2}}">生成失败</text>
+                    <text class="plan_i_status drop" wx:if="{{item.state==3}}">已撤回</text>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">投保人</view>
+                    <view class="weui-form-preview__value">{{item.toubao_name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">受保人</view>
+                    <view class="weui-form-preview__value">{{item.shoubao_name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">缴费年期</view>
+                    <view class="weui-form-preview__value">{{item.paymentperiodMapping.name}} 年</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">备注</view>
+                    <view class="weui-form-preview__value">{{item.planMemoMapping[item.planMemoMapping.length-1].content||'无'}}</view>
+                </view>
+            </view>
+        </navigator>
+        <view class="md_loadover flex" wx:if="{{plans.items.length&&!plans.pagination.hasNext}}">
+            <view class="md_loadover_line"></view>
+            <view class="md_loadover_txt">加载完了</view>
+            <view class="md_loadover_line"></view>
+        </view>
+        
+    </view>
+    
+    <view class="nodata" wx:if="{{!plans.items.length}}">
+        <image class="nodata_img" src="/images/common/nodata.png"></image>
+        <text class="nodata_txt">没有数据</text>
+    </view>
+    
+</view>

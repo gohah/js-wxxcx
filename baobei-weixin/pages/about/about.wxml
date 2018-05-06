@@ -1,0 +1,23 @@
+<view class="container about">
+	<view class="abt_top">
+		<view class="abt_top_content">
+			<image class="abt_top_logo" src="/images/common/logo.png"></image>
+			<text class="abt_top_version">当前版本 {{version}}</text>			
+		</view>
+	</view>
+	<view class="abt_main layout">
+		<view class="abt_box">
+			<view class="abt_box_hd">简介</view>
+			<view class="abt_box_bd">
+				<text class="abt_box_txt">保呗致力于通过互联网帮助用户管理保障信息，为用户提供保单的续保、理赔等售后服务。保呗与美国友邦、英国保诚、法国安盛等国际知名集团达成深度合作，在领域内经验丰富，专注于为客户提供高效、专业的智能保单提醒服务。</text>
+			</view>
+		</view>
+		<view class="abt_box">
+			<view class="abt_box_hd">联系方式</view>
+			<view class="abt_box_bd">
+				<view class="abt_box_txt">客服电话：<text class="abt_box_phone" bindtap="callLiechengcf">400-6686-208</text></view>
+				<text class="abt_box_txt">电子邮箱：business@liechengcf.com</text>
+			</view>
+		</view>
+	</view>
+</view>

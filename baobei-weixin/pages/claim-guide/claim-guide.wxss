@@ -1,0 +1,11 @@
+.claim_guide {
+
+}
+.clm_flow {
+	padding-top:50rpx;
+	text-align:center;
+}
+.clm_flow_img {
+	width:690rpx;
+	height:884rpx;
+}

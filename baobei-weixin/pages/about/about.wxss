@@ -1,0 +1,55 @@
+.abt_top {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    background: #D04B4B;
+    height: 300rpx;
+    align-items: center;
+    justify-content: center;
+    border-top: 1rpx solid #fff;
+}
+
+.abt_top_logo {
+    width: 177rpx;
+    height: 154rpx;
+}
+
+.abt_top_version {
+    display: block;
+    font-size:20rpx;
+    color:#fff;
+}
+
+.abt_main {
+}
+
+.abt_box {
+    padding-top: 30rpx;
+}
+
+.abt_box_hd {
+    font-size: 34rpx;
+    line-height:48rpx;
+    color: #F26F21;
+}
+
+.abt_box_title {
+    color: #F26F21;
+    margin-left: 10rpx;
+}
+
+.abt_box_bd {
+    padding-bottom: 20rpx;
+}
+
+.abt_box_txt {
+    display: block;
+    line-height: 36rpx;
+}
+.abt_box_phone {
+    font-size:34rpx;
+    color:#586C94;
+    text-decoration:underline;
+}

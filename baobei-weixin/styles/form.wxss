@@ -1,0 +1,35 @@
+/*button*/
+
+button[type="primary"],
+.md_form_btn {
+    /*background:#F26F21;*/
+    background: rgba(242, 111, 33, 1);
+}
+
+.button-hover[type="primary"] {
+    background: rgba(242, 111, 33, 0.7);
+}
+
+.md_form_ft {
+	padding:50rpx 30rpx;
+}
+.md_form_ft_link {
+	text-align:right;
+	padding:10rpx 0;
+	color:#586C94;
+}
+
+.weui-cells {
+    color:#333;
+}
+.weui-cells__title {
+    position: relative;
+}
+.weui-cells__title-link {
+    position: absolute;
+    right:30rpx;
+    top:0;
+    color:#586C94;
+    line-height:44rpx;
+}
+

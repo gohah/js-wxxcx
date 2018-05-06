@@ -1,0 +1,5 @@
+<view class="container">
+	<view class="mes_detail layout">
+		<text class="mes_detail_txt">{{content}}</text>
+	</view>
+</view>

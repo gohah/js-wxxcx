@@ -1,0 +1,141 @@
+<view class="container plan_detail">
+    <view class="weui-cells__title">投保人信息</view>
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">姓名</view>
+                <view class="weui-form-preview__value">{{detail.toubao_name}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">性别</view>
+                <view class="weui-form-preview__value">{{mapping.sex[detail.toubao_sex]}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">出生日期</view>
+                <view class="weui-form-preview__value">{{detail.toubao_birthday}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">吸烟情况</view>
+                <view class="weui-form-preview__value">{{mapping.smoke[detail.toubao_smoke]}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">受保人信息</view>
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">姓名</view>
+                <view class="weui-form-preview__value">{{detail.shoubao_name}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">性别</view>
+                <view class="weui-form-preview__value">{{mapping.sex[detail.shoubao_sex]}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">出生日期</view>
+                <view class="weui-form-preview__value">{{detail.shoubao_birthday}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">吸烟情况</view>
+                <view class="weui-form-preview__value">{{mapping.smoke[detail.shoubao_smoke]}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">计划书基本信息</view>
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">编号</view>
+                <view class="weui-form-preview__value">{{detail.planexcel_id}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">保险公司</view>
+                <view class="weui-form-preview__value">{{detail.companyMapping.name}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">保险产品</view>
+                <view class="weui-form-preview__value">{{detail.productMapping.name}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">缴费年期</view>
+                <view class="weui-form-preview__value">{{detail.paymentperiodMapping.name}} 年</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">缴费方式</view>
+                <view class="weui-form-preview__value">{{detail.payment_method||'未填写'}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">{{mapping.nbf_type[detail.nbf_type]}}</view>
+                <view class="weui-form-preview__value">${{detail.premium}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">提交时间</view>
+                <view class="weui-form-preview__value">{{detail.crtime}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">计划书补充信息</view>
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">附加险说明</view>
+                <view class="weui-form-preview__value">{{detail.fujia||'无'}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">提取说明</view>
+                <view class="weui-form-preview__value">{{detail.tqsm||'无'}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__hd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">高端医疗信息</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">产品</view>
+                <view class="weui-form-preview__value">{{detail.gdcp||'无'}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">保障区域</view>
+                <view class="weui-form-preview__value">{{detail.bzqy||'无'}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">保障级别</view>
+                <view class="weui-form-preview__value">{{detail.bzjb||'无'}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">自付额</view>
+                <view class="weui-form-preview__value">{{detail.zhifu||'无'}}</view>
+            </view>
+        </view>
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">备注</view>
+                <view class="weui-form-preview__value">{{detail.remarks||'无'}}</view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{detail.planMemoMapping.length}}">
+        <view class="weui-cells__title">审核意见</view>
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item" wx:for="{{detail.planMemoMapping}}" wx:key="">
+                    <view class="weui-form-preview__label">{{item.content}}</view>
+                    <view class="weui-form-preview__value">{{item.added}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+    
+    <view class="md_form_ft layout">
+        <button type="primary" class="md_form_btn" bindtap="dropPlan" data-id="{{detail.id}}" wx:if="{{detail.state==0}}">撤 回</button>
+        <!-- <button type="primary" class="md_form_btn" bindtap="downloadPlan" data-url="{{detail.planpdf_id}}" wx:if="{{detail.state==1}}">查看计划书</button> -->
+        <button type="primary" class="md_form_btn" bindtap="appointmentSign" data-company_id="{{detail.company_id}}" data-product_id="{{detail.product_id}}" data-subproduct_id="{{detail.subproduct_id}}" wx:if="{{detail.state==1}}">预约签单</button>
+        <button type="primary" class="md_form_btn" bindtap="editPlan" data-id="{{detail.id}}" wx:if="{{detail.state==3||detail.state==2}}">修 改</button>
+    </view>
+
+</view>

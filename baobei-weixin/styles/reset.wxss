@@ -1,0 +1,62 @@
+/*init*/
+page {
+    font-size: 28rpx;
+    color: #888;
+    background: #EFEFF4;
+}
+
+input::-webkit-input-placeholder {
+    color: #c0c0c0;
+    /*无效*/
+}
+
+image {
+    vertical-align: top;
+}
+
+.placeholder {
+    color: #c0c0c0;
+}
+
+/*color*/
+
+.gray {
+    color:#999;
+}
+
+.light_gray {
+    color:#B2B2B2;
+}
+
+.deep_gray {
+    color:#666;
+}
+
+.cyan {
+    color:#586C94;
+}
+
+.green {
+    color:#09BB07;
+}
+
+.black {
+    color:#333!important;
+}
+
+/*weui*/
+.weui-label,
+.weui-input,
+.weui-select {
+    font-size:34rpx;
+}
+.weui-select {
+    overflow:hidden;
+}
+.weui-select,
+.weui-input {
+    color:#666;
+}
+.weui-form-preview__label {
+    font-size:14px;
+}

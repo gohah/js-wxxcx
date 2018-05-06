@@ -1,0 +1,88 @@
+<view class="container add_detail">
+	<form bindsubmit="submitFun">
+		<view class="weui-cells__title">
+		保险公司（不可修改）
+		</view>
+		<view class="weui-cells weui-cells_after-title">
+	            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+	                <view class="weui-cell__bd light_gray">{{companyMapping.name}}</view>
+	            </view>
+	        </view>
+		<view class="weui-cells__title">
+			保险产品（不可修改）
+		</view>
+	    <view class="weui-cells weui-cells_after-title">
+	        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+	            <view class="weui-cell__bd light_gray">{{productMapping.name}}</view>
+	        </view>
+	    </view>
+
+		
+		<view class="weui-cells__title">基本信息</view>
+	    <view class="weui-cells weui-cells_after-title">
+		    <view class="weui-cell weui-cell_input">
+				<view class="weui-cell__bd">
+					<input type="text" class="weui-input" placeholder="输入保单号" maxlength="50" value="{{code}}" name="code" placeholder-class="placeholder" />
+				</view>
+			</view>
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__bd">
+					<input type="text" class="weui-input" placeholder="输入投保人" maxlength="50" value="{{customer_name}}" name="customer_name" placeholder-class="placeholder" />
+				</view>
+			</view>
+
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__bd">
+					<input type="text" class="weui-input" placeholder="输入受保人" maxlength="50" value="{{policy_name_cn}}" name="policy_name_cn" placeholder-class="placeholder" />
+				</view>
+			</view>	
+		</view>
+
+		<view class="weui-cells__title">缴费信息</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_select">
+	            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                <view class="weui-label">缴费年期(年)</view>
+	            </view>
+	            <view class="weui-cell__bd">
+	                <picker range="{{periodlistMapping}}" range-key="name" value="{{subproduct_id}}" name="subproduct_id" data-key="subproduct_id" bindchange="bindSelectChange">
+	                    <view class="weui-select weui-select_in-select-after">{{periodlistMapping[subproduct_id].name}}</view>
+	                </picker>
+	            </view>
+	        </view>
+
+			<view class="weui-cell weui-cell_select">
+	            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                <view class="weui-label">缴费方式</view>
+	            </view>
+	            <view class="weui-cell__bd">
+	                <picker range="{{mapping.list.payment_method}}" range-key="val" value="{{payment_method}}" name="payment_method" data-key="payment_method" bindchange="bindSelectChange">
+	                    <view class="weui-select weui-select_in-select-after">{{mapping.list.payment_method[payment_method].val}}</view>
+	                </picker>
+	            </view>
+	        </view>
+
+			<view class="weui-cell weui-cell_select">
+	            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                <view class="weui-label">首年缴费日期</view>
+	            </view>
+	            <view class="weui-cell__bd">
+	                <picker mode="date" start="1900-01-01" end="{{today}}" value="{{bb_first_year_payment_date}}" name="bb_first_year_payment_date" data-key="bb_first_year_payment_date" bindchange="bindSelectChange">
+	                    <view class="weui-select weui-select_in-select-after">{{bb_first_year_payment_date}}</view>
+	                </picker>
+	            </view>
+	        </view>
+			
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__bd">
+				<input type="number" class="weui-input" placeholder="输入年缴保费（美元）" maxlength="50" value="{{premium_usd}}" name="premium_usd" placeholder-class="placeholder" />
+				</view>
+			</view>
+		</view>
+		<view class="md_form_ft layout">
+			<button type="primary" formType="submit" class="md_form_btn">保 存</button>
+		</view>
+	</form>
+</view>
+
+<include src="/components/components.wxml"/>

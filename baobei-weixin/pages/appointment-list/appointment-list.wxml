@@ -1,0 +1,43 @@
+<view class="container appointment_list">
+    <view class="weui-cells__title">预约签单列表</view>
+    <view class="apls_list" wx:if="{{appointments.items.length}}">
+        <view class="weui-form-preview" wx:for="{{appointments.items}}" wx:key="">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__label">
+                    <text class="apls_i_title">{{item.productMapping.name}}</text>
+                </view>
+                <view class="weui-form-preview__value">
+                    <text class="apls_i_status">{{mapping.appointment_state[item.state]}}</text>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">保险公司</view>
+                    <view class="weui-form-preview__value">{{item.companyMapping.name}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">缴费年期</view>
+                    <view class="weui-form-preview__value">{{item.paymentperiodMapping.name}} 年</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">签单时间</view>
+                    <view class="weui-form-preview__value">{{item.detailtime}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">申请时间</view>
+                    <view class="weui-form-preview__value">{{item.crtime}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-footer">
+            <view class="weui-footer__text">温馨提示：为节省签单时间</view>
+            <view class="weui-footer__text">未提交的预约请到以下网址补充信息并提交</view>
+            <view class="weui-footer__text">http://erp.liechengcf.com</view>
+        </view>
+
+    </view>
+        <view class="nodata" wx:if="{{!appointments.items.length}}">
+            <image class="nodata_img" src="/images/common/nodata.png"></image>
+            <text class="nodata_txt">没有数据</text>
+        </view>
+</view>

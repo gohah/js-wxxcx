@@ -1,0 +1,37 @@
+.plls {
+
+}
+.plan_list {
+	margin-top:30rpx;
+}
+.plan_i_title {
+	font-size: 34rpx;
+	color: #333333;
+}
+.plan_i_status {
+	font-size: 34rpx;
+}
+.plan_i_status.ing {
+	color: #586C94;
+}
+.plan_i_status.pass {
+	color: #09BB07;
+}
+.plan_i_status.fail {
+	color: #D04B4B;
+}
+.plan_list .weui-form-preview__hd {
+	padding:4rpx 30rpx;
+}
+.plan_list .weui-form-preview__item {
+	line-height:36rpx;
+}
+.plan_list .weui-form-preview {
+	margin-bottom:16rpx;
+}
+
+/*没有数据*/
+.nodata {
+	margin-top:180rpx;
+	margin-bottom:180rpx;
+}

@@ -1,0 +1,122 @@
+<view class="container plan_order">
+    <view class="plod_form">
+        <view class="weui-cells__title">投保人信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="输入投保人姓名" maxlength="50" placeholder-class="placeholder" data-key="toubao_name" bindinput="bindInputChange" value="{{detail.toubao_name}}"/>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">性别</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker range="{{mapping.list.sex}}" range-key="val" value="{{selector.toubao_sex}}" name="toubao_sex" data-key="toubao_sex" bindchange="bindSelectChange">
+                            <view class="weui-select weui-select_in-select-after">{{mapping.list.sex[selector.toubao_sex].val}}</view>
+                        </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">出生日期</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="date" value="{{detail.toubao_birthday}}" start="1900-01-01" end="{{today}}" bindchange="bindBirthdayChange">
+                        <view class="weui-select">{{detail.toubao_birthday}}</view>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">吸烟情况</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker range="{{mapping.list.smoke}}" range-key="val" value="{{selector.toubao_smoke}}" name="toubao_smoke" data-key="toubao_smoke" bindchange="bindSelectChange">
+                            <view class="weui-select weui-select_in-select-after">{{mapping.list.smoke[selector.toubao_smoke].val}}</view>
+                        </picker>
+                </view>
+            </view>
+    
+<!--             <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">吸烟</view>
+                <view class="weui-cell__ft">
+                    <switch bindchange="bindSwiChange" value="{{swi.toubao_smoke}}"/>
+                </view>
+            </view> -->
+
+            <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">受保人与投保人为同一人</view>
+                <view class="weui-cell__ft">
+                    <switch bindchange="bindSwiChange" value="{{swi.samePeople}}" data-key="samePeople"/>
+                </view>
+            </view>
+        </view>
+
+        <view hidden="{{swi.samePeople}}">
+            <view class="weui-cells__title">受保人信息</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">姓名</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" placeholder="输入受保人姓名" maxlength="50" placeholder-class="placeholder" data-key="shoubao_name" bindinput="bindInputChange" value="{{detail.shoubao_name}}"/>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">性别</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker range="{{mapping.list.sex}}" range-key="val" value="{{selector.shoubao_sex}}" name="shoubao_sex" data-key="shoubao_sex" bindchange="bindSelectChange">
+                                <view class="weui-select weui-select_in-select-after">{{mapping.list.sex[selector.shoubao_sex].val}}</view>
+                            </picker>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">出生日期</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker mode="date" value="{{detail.shoubao_birthday}}" start="1900-01-01" end="{{today}}" bindchange="bindBirthdayChange2">
+                            <view class="weui-select">{{detail.shoubao_birthday}}</view>
+                        </picker>
+                    </view>
+                </view>
+
+<!--                 <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">吸烟</view>
+                    <view class="weui-cell__ft">
+                        <switch bindchange="bindSwiChange" value="{{swi.shoubao_smoke}}"/>
+                    </view>
+                </view> -->
+
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">吸烟情况</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker range="{{mapping.list.smoke}}" range-key="val" value="{{selector.shoubao_smoke}}" name="shoubao_smoke" data-key="shoubao_smoke" bindchange="bindSelectChange">
+                                <view class="weui-select weui-select_in-select-after">{{mapping.list.smoke[selector.shoubao_smoke].val}}</view>
+                            </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+         
+        <view class="plod_form_ft">
+            <button class="weui-btn" type="primary" bindtap="submitFun">下一步</button>
+        </view>
+
+    </view>
+
+</view>

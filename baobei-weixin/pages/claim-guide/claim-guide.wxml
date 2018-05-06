@@ -1,0 +1,5 @@
+<view class="container claim_guide">
+    <view class="clm_flow">
+        <image class="clm_flow_img" src="/images/page/claim-guide/clm_flow.png"></image>
+    </view>
+</view>

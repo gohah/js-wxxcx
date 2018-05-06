@@ -1,0 +1,3 @@
+<!-- wetoast -->
+<import src="/components/wetoast/wetoast.wxml"/>
+<template is="wetoast" data="{{...__wetoast__}}"/>

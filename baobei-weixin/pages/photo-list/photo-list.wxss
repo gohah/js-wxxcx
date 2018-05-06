@@ -1,0 +1,44 @@
+.photo_list {
+	color:#333;
+}
+.phls_staut_wrap {
+	position: absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background:rgba(0,0,0,0.3);
+	align-items:center;
+	justify-content:center;
+}
+.photo_list .weui-media-box__hd_in-appmsg {
+	position: relative;
+}
+.phls_statu_icon {
+	width:60rpx;
+	height:60rpx;
+}
+.phls_list .weui-media-box_appmsg {
+	align-items:flex-start;
+}
+.phls_list .weui-media-box__title {
+	white-space: normal;
+	-webkit-box-orient: vertical;
+	justify-content:space-between;
+}
+.phls_i_title.ing {
+	color:#F26F21;
+}
+.phls_i_title.fail {
+	color:#D04B4B;
+}
+.phls_i_title.finish {
+	color:#09BB07;
+}
+.phls_i_title.cancel {
+	color:#666;
+}
+.phls_link_btn {
+	font-size: 28rpx;
+	color:#586C94;
+}

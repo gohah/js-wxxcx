@@ -1,0 +1,16 @@
+.add_company {}
+
+.addcom_list {
+    background:#fff;
+    overflow: hidden;
+}
+.addcom_list .weui-grid__icon {
+    width:120rpx;
+    height:120rpx;
+}
+.addcom_list .weui-grids {
+    margin-right:-1rpx;
+}
+.addcom_list .weui-grid {
+    padding:20rpx 10rpx;
+}

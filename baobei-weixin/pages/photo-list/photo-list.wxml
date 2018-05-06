@@ -1,0 +1,47 @@
+<view class="container photo_list">
+    <view class="weui-panel weui-panel_access phls_list">
+        <view class="weui-panel__bd">
+            <block wx:for="{{photos.items}}" wx:key="">
+                <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" bindtap="previewPhoto" data-url="{{item.url}}">
+                        <image class="weui-media-box__thumb" src="{{item.url}}" />
+                        <view class="phls_staut_wrap flex">
+                            <image class="phls_statu_icon" src="/images/page/photo-list/icon_ing.png" wx:if="{{item.status==0}}"></image>
+                            <image class="phls_statu_icon" src="/images/page/photo-list/icon_fail.png" wx:if="{{item.status==-1}}"></image>
+                            <image class="phls_statu_icon" src="/images/page/photo-list/icon_finish.png" wx:if="{{item.status==1}}"></image>
+                            <image class="phls_statu_icon" src="/images/page/photo-list/icon_cancel.png" wx:if="{{item.status==-2}}"></image>
+                        </view>
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title flex" wx:if="{{item.status==0}}">
+                            <view class="phls_i_title ing">解析中</view>
+                            <view class="phls_link_btn" data-id="{{item.id}}" data-index="{{index}}" bindtap="cancelPhotoUpload">撤销</view>
+                        </view>
+                        <view class="weui-media-box__title flex" wx:if="{{item.status==-1}}">
+                            <view class="phls_i_title fail">解析失败</view>
+                            <view class="phls_link_btn" data-id="{{item.id}}" data-index="{{index}}" bindtap="chooseImage">重新上传</view>
+                        </view>
+                        <view class="weui-media-box__title flex" wx:if="{{item.status==1}}">
+                            <view class="phls_i_title finish">解析完成</view>
+                            <view class="phls_link_btn" data-id="{{item.id}}" data-policyid="{{item.policy_id}}" bindtap="checkPolicy">查看</view>
+                        </view>
+                        <view class="weui-media-box__title flex" wx:if="{{item.status==-2}}">
+                            <view class="phls_i_title cancel">已撤销</view>
+                        </view>
+
+                        <view class="weui-media-box__desc">说明：{{item.remark}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="weui-panel__ft" wx:if="{{!photos.pagination.hasNext}}">
+            <view class="page">
+                <view class="page__bd">
+                    <view class="weui-loadmore weui-loadmore_line">
+                        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">加载完了</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

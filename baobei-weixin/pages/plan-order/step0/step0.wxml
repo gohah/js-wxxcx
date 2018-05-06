@@ -1,0 +1,262 @@
+<view class="container plan_order">
+    <view class="plod_page_container flex" animation="{{step}}" style="width:{{containerWidth}}">
+        <view class="plod_form">
+            <view class="weui-cells__title">投保人信息</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">姓名</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" placeholder="输入投保人姓名" maxlength="50" placeholder-class="placeholder" data-key="toubao_name" bindinput="bindInputChange" value="{{detail.toubao_name}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">性别</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker range="{{mapping.list.sex}}" range-key="val" value="{{selector.toubao_sex}}" name="toubao_sex" data-key="toubao_sex" bindchange="bindSelectChange">
+                                <view class="weui-select weui-select_in-select-after">{{mapping.list.sex[selector.toubao_sex].val}}</view>
+                            </picker>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">出生日期</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker mode="date" value="{{detail.toubao_birthday}}" start="1900-01-01" end="{{today}}" data-key="toubao_birthday" bindchange="bindInputChange">
+                            <view class="weui-input">{{detail.toubao_birthday}}</view>
+                        </picker>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">吸烟情况</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker range="{{mapping.list.smoke}}" range-key="val" value="{{selector.toubao_smoke}}" name="toubao_smoke" data-key="toubao_smoke" bindchange="bindSelectChange">
+                                <view class="weui-select weui-select_in-select-after">{{mapping.list.smoke[selector.toubao_smoke].val}}</view>
+                            </picker>
+                    </view>
+                </view>
+
+                <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">受保人与投保人为同一人</view>
+                    <view class="weui-cell__ft">
+                        <switch bindchange="bindSwiChange" value="{{swi.samePeople}}" data-key="samePeople" checked="{{swi.samePeople}}"/>
+                    </view>
+                </view>
+            </view>
+
+            <view hidden="{{swi.samePeople}}">
+                <view class="weui-cells__title">受保人信息</view>
+                <view class="weui-cells weui-cells_after-title">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">姓名</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="输入受保人姓名" maxlength="50" placeholder-class="placeholder" data-key="shoubao_name" bindinput="bindInputChange" value="{{detail.shoubao_name}}"/>
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_select">
+                        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                            <view class="weui-label">性别</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <picker range="{{mapping.list.sex}}" range-key="val" value="{{selector.shoubao_sex}}" name="shoubao_sex" data-key="shoubao_sex" bindchange="bindSelectChange">
+                                    <view class="weui-select weui-select_in-select-after">{{mapping.list.sex[selector.shoubao_sex].val}}</view>
+                                </picker>
+                        </view>
+                    </view>
+
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">出生日期</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <picker mode="date" value="{{detail.shoubao_birthday}}" start="1900-01-01" end="{{today}}" data-key="shoubao_birthday" bindchange="bindInputChange">
+                                <view class="weui-input">{{detail.shoubao_birthday}}</view>
+                            </picker>
+                        </view>
+                    </view>
+
+                    <view class="weui-cell weui-cell_select">
+                        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                            <view class="weui-label">吸烟情况</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <picker range="{{mapping.list.smoke}}" range-key="val" value="{{selector.shoubao_smoke}}" name="shoubao_smoke" data-key="shoubao_smoke" bindchange="bindSelectChange">
+                                    <view class="weui-select weui-select_in-select-after">{{mapping.list.smoke[selector.shoubao_smoke].val}}</view>
+                                </picker>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="plod_form_ft">
+                <button class="weui-btn" type="primary" bindtap="nextStep1">下一步</button>
+            </view>
+
+        </view>
+
+        <view class="plod_form">
+            <view class="weui-cells__title">计划书基本信息</view>
+            <view class="weui-cells weui-cells_after-title">
+                <navigator url="/pages/add-company/add-company" class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">保险公司</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <view class="weui-select weui-select_in-select-after">{{companyList[selector.company].name}}</view>
+                    </view>
+                </navigator>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">保险产品</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker range="{{productList}}" range-key="name" data-key="product" bindchange="productsChange" value="{{selector.product}}">
+                            <view class="weui-select weui-select_in-select-after">{{productList[selector.product].name}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                        <view class="weui-label">缴费年期(年)</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker range="{{productList[selector.product].paymentperiodsMapping}}" range-key="name" value="{{selector.subproduct_id}}" data-key="subproduct_id" bindchange="bindSelectChange">
+                            <view class="weui-select weui-select_in-select-after">{{productList[selector.product].paymentperiodsMapping[selector.subproduct_id].name}}</view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__hd" style="width: 105px">
+                        <picker range="{{mapping.list.nbf_type}}" range-key="val" value="{{selector.nbf_type}}" name="nbf_type" data-key="nbf_type" bindchange="bindSelectChange">
+                            <view class="weui-select black">{{mapping.list.nbf_type[selector.nbf_type].val}}</view>
+                        </picker>
+                    </view>
+                    <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                        <input type="number" class="weui-input" placeholder="请输入费用（美元）" data-key="premium" bindinput="bindInputChange" value="{{detail.premium}}" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells__title">计划书补充信息</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">有无附加险</view>
+                    <view class="weui-cell__ft">
+                        <switch bindchange="bindSwiChange" data-key="fujia" checked="{{swi.fujia}}" />
+                    </view>
+                </view>
+                <view class="weui-cell" hidden="{{!swi.fujia}}">
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" placeholder="请输入附加险说明信息" style="height: 3.3em" data-key="fujia" bindinput="bindInputChange" value="{{detail.fujia}}" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title plod_plan_extra">
+                <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">是否提取</view>
+                    <view class="weui-cell__ft">
+                        <switch bindchange="bindSwiChange" data-key="tqsm" checked="{{swi.tqsm}}" />
+                    </view>
+                </view>
+                <view class="weui-cell" hidden="{{!swi.tqsm}}">
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" placeholder="请输入提取说明" style="height: 3.3em" data-key="tqsm" bindinput="bindInputChange" value="{{detail.tqsm}}" />
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title plod_plan_extra">
+                <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">是否添加高端医疗</view>
+                    <view class="weui-cell__ft">
+                        <switch bindchange="bindSwiChange" data-key="gdcp" checked="{{swi.gdcp}}" />
+                    </view>
+                </view>
+                <view hidden="{{!swi.gdcp}}">
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">产品</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="产品名称" data-key="gdcp" bindinput="bindInputChange" value="{{detail.gdcp}}" />
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">保障区域</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="保障区域" data-key="bzqy" bindinput="bindInputChange" value="{{detail.bzqy}}" />
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">保障级别</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="保障级别" data-key="bzjb" bindinput="bindInputChange" value="{{detail.bzjb}}" />
+                        </view>
+                    </view>
+                    <view class="weui-cell weui-cell_input">
+                        <view class="weui-cell__hd">
+                            <view class="weui-label">自付额</view>
+                        </view>
+                        <view class="weui-cell__bd">
+                            <input class="weui-input" placeholder="自付额" data-key="zhifu" bindinput="bindInputChange" value="{{detail.zhifu}}" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells__title">备注</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" placeholder="备注信息" style="height: 3.3em" maxlength="300" data-key="remarks" bindinput="bindInputChange" value="{{detail.remarks}}" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="plod_form_ft">
+                <button class="weui-btn" type="primary" bindtap="nextStep2">下一步</button>
+                <button class="weui-btn" type="default" bindtap="prevStep">上一步</button>
+            </view>
+
+        </view>
+
+        <view class="plod_form">
+            <view class="space_30"></view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">邮箱</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" placeholder="接收计划书邮箱" value="{{detail.email}}" data-key="email" bindinput="bindInputChange" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells__tips">
+                <text class="tips_txt">最近输入:</text>
+                <text class="tips_link" bindtap="recentlyEmailTap" wx:for="{{recentemail}}" wx:key="" data-val="{{item}}">{{item}}</text>
+            </view>
+
+            <view class="plod_form_ft">
+                <button class="weui-btn" type="primary" bindtap="submitFun">提交</button>
+                <button class="weui-btn" type="default" bindtap="prevStep">上一步</button>
+            </view>
+
+        </view>        
+    </view>
+
+</view>
